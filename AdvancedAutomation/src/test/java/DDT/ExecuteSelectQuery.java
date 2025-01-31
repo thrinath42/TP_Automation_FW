@@ -10,7 +10,7 @@ import com.mysql.jdbc.Driver;
 
 
 
-public class ExecuteSelectQueryTest {
+public class ExecuteSelectQuery {
 
 	public static void main(String[] args) throws SQLException {
 		Connection conn=null;

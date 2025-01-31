@@ -8,7 +8,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-public class ExtentReportTest {
+public class ExtentReport {
 	
 	@Test
 	public void createContactTest() {

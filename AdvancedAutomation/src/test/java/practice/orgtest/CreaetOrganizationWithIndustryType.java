@@ -1,4 +1,4 @@
-package practice.contacttest;
+package practice.orgtest;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,11 +13,14 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
-public class CreateContactTest {
+public class CreaetOrganizationWithIndustryType {
 
 	public static void main(String[] args) throws InterruptedException, EncryptedDocumentException, IOException {
 		// Generate random numbers
@@ -30,10 +33,11 @@ public class CreateContactTest {
 
 		FileInputStream fis1 = new FileInputStream("C:\\Users\\Thrinath\\Documents\\Tek Pyramid\\ExternalResourceFiles\\testscriptdata.xlsx");
 		Workbook wb = WorkbookFactory.create(fis1);
-		Sheet sh = wb.getSheet("contact");
-		Row row = sh.getRow(1);
-		String lastName = row.getCell(2).toString() + randomInt;
-		wb.close();
+		Sheet sh = wb.getSheet("org2");
+		Row row = sh.getRow(4);
+		String orgname = row.getCell(2).toString() + randomInt;
+		String industry = row.getCell(3).toString();
+		String type = row.getCell(4).toString();
 
 		String Browser = prop.getProperty("browser");
 		WebDriver driver = null;
@@ -55,28 +59,42 @@ public class CreateContactTest {
 		driver.findElement(By.name("user_password")).sendKeys(prop.getProperty("pwd"));
 		driver.findElement(By.id("submitButton")).click();
 		// navigate to module
-		driver.findElement(By.linkText("Contacts")).click();
+		driver.findElement(By.linkText("Organizations")).click();
 		Thread.sleep(1000);
 		// click on create organization button
-		driver.findElement(By.xpath("//img[@title='Create Contact...']")).click();
+		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
 		// enter all details create org
-		driver.findElement(By.name("lastname")).sendKeys(lastName);
+		driver.findElement(By.name("accountname")).sendKeys(orgname);
+		// select the Industry from dropdrown
+		WebElement industryD = driver.findElement(By.name("industry"));
+		Select sel = new Select(industryD);
+		sel.selectByVisibleText(industry);
+
+		WebElement typeD = driver.findElement(By.name("accounttype"));
+		Select sel1 = new Select(typeD);
+		sel1.selectByVisibleText(type);
 		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
 
-		// Verify Header message Exepected Result
-		String actName = driver.findElement(By.id("dtlview_Last Name")).getText();
-		if (actName.contains(lastName)) {
-			System.out.println(lastName + " is created==pass");
+		// Verify the industries and type info
+		String actIndustries = driver.findElement(By.id("dtlview_Industry")).getText();
+		if (actIndustries.contains(industry)) {
+			System.out.println(industry + " is created==pass");
 		} else {
-			System.out.println(lastName + " is not created==fail");
+			System.out.println(industry + " is not created==fail");
+		}
+		
+		String actType = driver.findElement(By.id("dtlview_Type")).getText();
+		if (actType.contains(type)) {
+			System.out.println(type + " is created==pass");
+		} else {
+			System.out.println(type + " is not created==fail");
 		}
 
-	
 		// logout
-//				Actions act = new Actions(driver);
-//				act.moveToElement(driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"))).perform();
-//				driver.findElement(By.linkText("Sign Out")).click();
-		Thread.sleep(5000);
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"))).perform();
+		driver.findElement(By.linkText("Sign Out")).click();
+
 		driver.quit();
 
 	}

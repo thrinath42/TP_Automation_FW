@@ -10,7 +10,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-public class ReadDataFromExcelTest {
+public class ReadDataFromExcel {
 
 	public static void main(String[] args) throws EncryptedDocumentException, IOException {
 			//Step 1: get the excel path location and java object of physcial excel file

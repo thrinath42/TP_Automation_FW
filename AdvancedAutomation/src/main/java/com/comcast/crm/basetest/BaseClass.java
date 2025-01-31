@@ -76,7 +76,7 @@ public class BaseClass {
 				lp.loginToApp(URL, UN, PWD);
 				System.out.println("common data fetched from xml file");
 			} catch (Exception e) {
-				e.printStackTrace();
+			//	e.printStackTrace();
 				URL= fLib.getDataFromProperties("url");
 				UN= fLib.getDataFromProperties("un");
 				PWD= fLib.getDataFromProperties("pwd");

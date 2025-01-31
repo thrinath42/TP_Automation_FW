@@ -62,7 +62,7 @@ public class CreateContactTest extends BaseClass {
 		String actName = cip.getLastNameField().getText();
 		
 		SoftAssert soft=new SoftAssert();
-		soft.assertEquals(actName, " ");
+		soft.assertEquals(actName, lastName);
 		Reporter.log("Validated Successfully",true);
 		
 		String actHeading=cip.getHeaderText().getText();

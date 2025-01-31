@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 import com.mysql.jdbc.Driver;
 
-public class ExecuteNonSelectQUeryTest {
+public class ExecuteNonSelectQUery {
 
 	public static void main(String[] args) throws SQLException {
 		//Step1 : load/register the DB driver

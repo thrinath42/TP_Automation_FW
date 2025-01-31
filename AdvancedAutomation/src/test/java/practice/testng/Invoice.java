@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import com.comcast.crm.basetest.BaseClass;
 import com.comcast.crm.listenerUtility.ListenerImplementationClass;
 @Listeners(ListenerImplementationClass.class)
-public class InvoiceTest extends BaseClass{
+public class Invoice extends BaseClass{
 	
 	@Test(retryAnalyzer = com.comcast.crm.listenerUtility.RetryListenerImp.class)
 	public void createInvoiceTEst() {

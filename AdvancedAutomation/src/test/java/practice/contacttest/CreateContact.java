@@ -1,4 +1,4 @@
-package practice.orgtest;
+package practice.contacttest;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,11 +16,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 
-public class CreateOrganizationWithPhoneNumberTest {
+public class CreateContact {
 
-	public static void main(String[] args) throws EncryptedDocumentException, IOException, InterruptedException {
+	public static void main(String[] args) throws InterruptedException, EncryptedDocumentException, IOException {
 		// Generate random numbers
 		Random random = new Random();
 		int randomInt = random.nextInt(1000); // to set upper limit for a random number
@@ -31,10 +30,9 @@ public class CreateOrganizationWithPhoneNumberTest {
 
 		FileInputStream fis1 = new FileInputStream("C:\\Users\\Thrinath\\Documents\\Tek Pyramid\\ExternalResourceFiles\\testscriptdata.xlsx");
 		Workbook wb = WorkbookFactory.create(fis1);
-		Sheet sh = wb.getSheet("org2");
-		Row row = sh.getRow(7);
-		String orgname = row.getCell(2).toString() + randomInt;
-		String phone = row.getCell(3).toString();
+		Sheet sh = wb.getSheet("contact");
+		Row row = sh.getRow(1);
+		String lastName = row.getCell(2).toString() + randomInt;
 		wb.close();
 
 		String Browser = prop.getProperty("browser");
@@ -57,28 +55,28 @@ public class CreateOrganizationWithPhoneNumberTest {
 		driver.findElement(By.name("user_password")).sendKeys(prop.getProperty("pwd"));
 		driver.findElement(By.id("submitButton")).click();
 		// navigate to module
-		driver.findElement(By.linkText("Organizations")).click();
+		driver.findElement(By.linkText("Contacts")).click();
 		Thread.sleep(1000);
 		// click on create organization button
-		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
+		driver.findElement(By.xpath("//img[@title='Create Contact...']")).click();
 		// enter all details create org
-		driver.findElement(By.name("accountname")).sendKeys(orgname);
-		driver.findElement(By.id("phone")).sendKeys(phone);
+		driver.findElement(By.name("lastname")).sendKeys(lastName);
 		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
 
-		// Verify phone number info Exepected Result
-		String actPhone = driver.findElement(By.id("dtlview_Phone")).getText();
-		if (actPhone.contains(phone)) {
-			System.out.println(phone + " is created==pass");
+		// Verify Header message Exepected Result
+		String actName = driver.findElement(By.id("dtlview_Last Name")).getText();
+		if (actName.contains(lastName)) {
+			System.out.println(lastName + " is created==pass");
 		} else {
-			System.out.println(phone + " is not created==fail");
+			System.out.println(lastName + " is not created==fail");
 		}
 
+	
 		// logout
-		Actions act = new Actions(driver);
-		act.moveToElement(driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"))).perform();
-		driver.findElement(By.linkText("Sign Out")).click();
-
+//				Actions act = new Actions(driver);
+//				act.moveToElement(driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"))).perform();
+//				driver.findElement(By.linkText("Sign Out")).click();
+		Thread.sleep(5000);
 		driver.quit();
 
 	}

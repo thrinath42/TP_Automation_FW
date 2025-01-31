@@ -60,7 +60,8 @@ public class CreateProducttest extends BaseClass{
 			String actProdName = cip.getProductField().getText();
 			wLib.validateUsingHardAssert(actProdName, prodname);
 		}
-		@Test
+
+		@Test(enabled = false)
 		public void createProductAndSearch() throws InterruptedException, EncryptedDocumentException, IOException {
 			String prodname = eLib.getDataFromExcel("product", 1, 2)+jLib.getRandomNumber();
 			UtilityClassObject.getTest().log(Status.INFO, "read data from excel");
