@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="7" total="9" passed="2" failed="0" skipped="0">
   <reporter-output>
-    <line>
-      <![CDATA[snapchat34608 is created==pass]]>
-    </line>
   </reporter-output>
-  <suite started-at="2025-01-29T09:35:31 IST" name="Default suite" finished-at="2025-01-29T09:36:09 IST" duration-ms="37941">
+  <suite started-at="2025-01-31T17:13:09 IST" name="Suite" finished-at="2025-01-31T17:14:42 IST" duration-ms="93030">
     <groups>
+      <group name="regressionTest">
+        <method signature="CreateContactTest.createContactWithOrganizationTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactTest@799f10e1]" name="createContactWithOrganizationTest" class="com.comcast.crm.contacttest.CreateContactTest"/>
+        <method signature="CreateOrganizationTest.createOrganizationTest()[pri:0, instance:com.comcast.crm.orgtest.CreateOrganizationTest@31304f14]" name="createOrganizationTest" class="com.comcast.crm.orgtest.CreateOrganizationTest"/>
+      </group> <!-- regressionTest -->
+      <group name="smokeTest">
+        <method signature="CreateOrganizationTest.createOrganizationTest()[pri:0, instance:com.comcast.crm.orgtest.CreateOrganizationTest@31304f14]" name="createOrganizationTest" class="com.comcast.crm.orgtest.CreateOrganizationTest"/>
+      </group> <!-- smokeTest -->
     </groups>
-    <test started-at="2025-01-29T09:35:31 IST" name="Default test" finished-at="2025-01-29T09:36:09 IST" duration-ms="37941">
-      <class name="practice.product.UsingQuickCreate">
-        <test-method is-config="true" signature="configBS()[pri:0, instance:practice.product.UsingQuickCreate@293a5bf6]" started-at="2025-01-29T09:35:31 IST" name="configBS" finished-at="2025-01-29T09:35:31 IST" duration-ms="383" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- configBS -->
-        <test-method is-config="true" signature="configBC(java.lang.String)[pri:0, instance:practice.product.UsingQuickCreate@293a5bf6]" started-at="2025-01-29T09:35:32 IST" name="configBC" finished-at="2025-01-29T09:35:34 IST" duration-ms="2107" status="PASS">
+    <test started-at="2025-01-31T17:13:09 IST" name="Test" finished-at="2025-01-31T17:14:42 IST" duration-ms="93030">
+      <class name="com.comcast.crm.orgtest.CreateOrganizationTest">
+        <test-method is-config="true" signature="configBC(java.lang.String)[pri:0, instance:com.comcast.crm.orgtest.CreateOrganizationTest@31304f14]" started-at="2025-01-31T17:14:20 IST" name="configBC" finished-at="2025-01-31T17:14:21 IST" duration-ms="1210" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -25,37 +25,74 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configBC -->
-        <test-method is-config="true" signature="configBM(org.testng.xml.XmlTest)[pri:0, instance:practice.product.UsingQuickCreate@293a5bf6]" started-at="2025-01-29T09:35:34 IST" name="configBM" finished-at="2025-01-29T09:35:39 IST" duration-ms="5169" status="PASS">
+        <test-method is-config="true" signature="configBM(org.testng.xml.XmlTest)[pri:0, instance:com.comcast.crm.orgtest.CreateOrganizationTest@31304f14]" started-at="2025-01-31T17:14:21 IST" name="configBM" finished-at="2025-01-31T17:14:26 IST" duration-ms="4725" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.xml.XmlTest@93bd4e08]]>
+                <![CDATA[org.testng.xml.XmlTest@e2582be]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configBM -->
-        <test-method signature="quickCreate()[pri:0, instance:practice.product.UsingQuickCreate@293a5bf6]" started-at="2025-01-29T09:35:39 IST" name="quickCreate" finished-at="2025-01-29T09:36:07 IST" duration-ms="28221" status="PASS">
+        <test-method signature="createOrganizationTest()[pri:0, instance:com.comcast.crm.orgtest.CreateOrganizationTest@31304f14]" started-at="2025-01-31T17:14:26 IST" name="createOrganizationTest" finished-at="2025-01-31T17:14:40 IST" duration-ms="14010" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[snapchat34608 is created==pass]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- quickCreate -->
-        <test-method is-config="true" signature="configAM()[pri:0, instance:practice.product.UsingQuickCreate@293a5bf6]" started-at="2025-01-29T09:36:07 IST" name="configAM" finished-at="2025-01-29T09:36:09 IST" duration-ms="2114" status="PASS">
+        </test-method> <!-- createOrganizationTest -->
+        <test-method is-config="true" signature="configAM()[pri:0, instance:com.comcast.crm.orgtest.CreateOrganizationTest@31304f14]" started-at="2025-01-31T17:14:40 IST" name="configAM" finished-at="2025-01-31T17:14:42 IST" duration-ms="1870" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configAM -->
-        <test-method is-config="true" signature="configAC()[pri:0, instance:practice.product.UsingQuickCreate@293a5bf6]" started-at="2025-01-29T09:36:09 IST" name="configAC" finished-at="2025-01-29T09:36:09 IST" duration-ms="288" status="PASS">
+        <test-method is-config="true" signature="configAC()[pri:0, instance:com.comcast.crm.orgtest.CreateOrganizationTest@31304f14]" started-at="2025-01-31T17:14:42 IST" name="configAC" finished-at="2025-01-31T17:14:42 IST" duration-ms="227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configAC -->
-        <test-method is-config="true" signature="configAS()[pri:0, instance:practice.product.UsingQuickCreate@293a5bf6]" started-at="2025-01-29T09:36:09 IST" name="configAS" finished-at="2025-01-29T09:36:09 IST" duration-ms="13" status="PASS">
+      </class> <!-- com.comcast.crm.orgtest.CreateOrganizationTest -->
+      <class name="com.comcast.crm.contacttest.CreateContactTest">
+        <test-method is-config="true" signature="configBS()[pri:0, instance:com.comcast.crm.contacttest.CreateContactTest@799f10e1]" started-at="2025-01-31T17:13:09 IST" name="configBS" finished-at="2025-01-31T17:13:09 IST" duration-ms="389" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBS -->
+        <test-method is-config="true" signature="configBC(java.lang.String)[pri:0, instance:com.comcast.crm.contacttest.CreateContactTest@799f10e1]" started-at="2025-01-31T17:13:09 IST" name="configBC" finished-at="2025-01-31T17:13:11 IST" duration-ms="2312" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBC -->
+        <test-method is-config="true" signature="configBM(org.testng.xml.XmlTest)[pri:0, instance:com.comcast.crm.contacttest.CreateContactTest@799f10e1]" started-at="2025-01-31T17:13:11 IST" name="configBM" finished-at="2025-01-31T17:13:30 IST" duration-ms="18604" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.xml.XmlTest@e2582be]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configBM -->
+        <test-method signature="createContactWithOrganizationTest()[pri:0, instance:com.comcast.crm.contacttest.CreateContactTest@799f10e1]" started-at="2025-01-31T17:13:30 IST" name="createContactWithOrganizationTest" finished-at="2025-01-31T17:14:17 IST" duration-ms="47091" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createContactWithOrganizationTest -->
+        <test-method is-config="true" signature="configAM()[pri:0, instance:com.comcast.crm.contacttest.CreateContactTest@799f10e1]" started-at="2025-01-31T17:14:17 IST" name="configAM" finished-at="2025-01-31T17:14:20 IST" duration-ms="2648" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAM -->
+        <test-method is-config="true" signature="configAC()[pri:0, instance:com.comcast.crm.contacttest.CreateContactTest@799f10e1]" started-at="2025-01-31T17:14:20 IST" name="configAC" finished-at="2025-01-31T17:14:20 IST" duration-ms="289" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configAC -->
+        <test-method is-config="true" signature="configAS()[pri:0, instance:com.comcast.crm.contacttest.CreateContactTest@799f10e1]" started-at="2025-01-31T17:14:42 IST" name="configAS" finished-at="2025-01-31T17:14:42 IST" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configAS -->
-      </class> <!-- practice.product.UsingQuickCreate -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.comcast.crm.contacttest.CreateContactTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

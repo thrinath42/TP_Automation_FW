@@ -12,14 +12,10 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import org.testng.xml.XmlClass;
 import org.testng.xml.XmlTest;
 
-import com.aventstack.extentreports.Status;
-import com.beust.jcommander.Parameter;
 import com.comcast.crm.generic.databaseutility.DataBaseUtility;
 import com.comcast.crm.generic.fileutility.ExcelUtility;
 import com.comcast.crm.generic.fileutility.FileUtility;
@@ -77,9 +73,9 @@ public class BaseClass {
 				System.out.println("common data fetched from xml file");
 			} catch (Exception e) {
 			//	e.printStackTrace();
-				URL= fLib.getDataFromProperties("url");
-				UN= fLib.getDataFromProperties("un");
-				PWD= fLib.getDataFromProperties("pwd");
+				URL= System.getProperty("url",fLib.getDataFromProperties("url"));
+				UN= System.getProperty("un",fLib.getDataFromProperties("un"));
+				PWD= System.getProperty("pwd",fLib.getDataFromProperties("pwd"));
 				System.out.println("common data fetched from Property file");
 				lp.loginToApp(URL, UN, PWD);
 			}
