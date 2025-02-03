@@ -15,7 +15,7 @@ public class DataSender {
 		
 		for (int i = 0; i < rowCount; i++) {
 			for (int j = 0; j < 2; j++) {
-				ar[i][j] = eu.getDataFromExcel("amazonProduct", i+1, j);
+				ar[i][j] = eu.getDataFromExcel("amazonProduct", i+1, j);  //a[0][0] and a[0]a[1]
 			}
 		}
 		

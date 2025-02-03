@@ -3,17 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="practice.product.AccessingDashboardtest">
+      <class name="practice.mock.selfinalmock030225">
         <methods>
-          <include name="configBS"/>
-          <include name="configBC"/>
-          <include name="configAS"/>
-          <include name="configAC"/>
-          <include name="dashboard"/>
-          <include name="configBM"/>
-          <include name="configAM"/>
+          <include name="clinique"/>
         </methods>
-      </class> <!-- practice.product.AccessingDashboardtest -->
+      </class> <!-- practice.mock.selfinalmock030225 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
