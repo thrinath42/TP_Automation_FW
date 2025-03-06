@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="practice.mock.selfinalmock030225">
+      <class name="practice.mock.BMS">
         <methods>
-          <include name="clinique"/>
+          <include name="threatres"/>
         </methods>
-      </class> <!-- practice.mock.selfinalmock030225 -->
+      </class> <!-- practice.mock.BMS -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
